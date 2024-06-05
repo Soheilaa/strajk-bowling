@@ -34,7 +34,6 @@ test('booking form allows user to input date, time, and number of players', asyn
   }
 });
 
-// Users can reserve one or more lanes for the selected date and time.
 test('minimum booking of 1 lane and number of lanes must always be a number', async () => {
   const { queryAllByTestId } = render(<BookingInfo />);
 

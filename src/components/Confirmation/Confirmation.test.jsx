@@ -57,17 +57,13 @@ it('Total amount to be paid must be equal to 120 SEK / person + 100 SEK / lane',
     />
   );
 
-  // Check if the booking number is displayed
   expect(getByTestId("booking-number")).toBeInTheDocument();
 
-  // Check if the total price is displayed correctly
   const totalPriceElement = container.querySelector('.confirmation__price p:last-child');
   expect(totalPriceElement).toHaveTextContent(`${expectedTotal} sek`);
 
-  // Simulate clicking the confirmation button
   const button = getByText("Sweet, let's go!");
   fireEvent.click(button);
 
-  // Check if the setConfirmation function was called
   expect(setConfirmationMock).toHaveBeenCalled();
 });
